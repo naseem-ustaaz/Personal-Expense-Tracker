@@ -113,9 +113,20 @@ void viewExpenseByCategory(){
 
 }
 
+void clearScreen() { 
+
+    #ifdef _WIN32
+    system("cls");
+    #else
+    system("clear");
+    #endif
+
+}
+
 int main() {
     int choice;
-    while (true){
+    while (true) {
+    clearScreen();
     cout << "\n==============================\n"
          << "        Expense Tracker\n"
          << "==============================\n"    
@@ -123,7 +134,6 @@ int main() {
          << "2: View expense" << endl
          << "3: View expense by category" << endl
          << "4: Exit program" << endl
-         << "5: Clear Screen" << endl
          << "Your Choice: " ;
 
     cin >> choice;
@@ -148,10 +158,6 @@ int main() {
         case 4: {
         cout << "Exiting..." << endl;
         return 0;
-        break;
-        }
-        case 5: {
-        system("cls");
         break;
         }
         default:
